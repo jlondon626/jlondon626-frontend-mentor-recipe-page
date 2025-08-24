@@ -75,7 +75,7 @@ img {
   font-size: 0.7em;
 }
 
-.prep-time h3 {
+.prep-time h2 {
   font-family: "Outfit", sans-serif;
   font-weight: 600;
   color: var(--rose-800);
@@ -152,11 +152,10 @@ table tr td:nth-child(2) {
 
 
 /* Responsive for small screens */
-@media (max-width: 400px) {
+@media (max-width: 25rem) { /* 25rem × 16px ≈ 400px */
   article {
     width: 100vw;
-    min-width: 280px;
-    height: 100vh;
+    min-width: 17.5rem;   /* 17.5rem × 16px = 280px */
     border-radius: 0;
   }
 }
