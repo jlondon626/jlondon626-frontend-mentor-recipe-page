@@ -1,0 +1,162 @@
+:root {
+  /* Colors */
+  --white: hsl(0, 0%, 100%);
+  --stone-100: hsl(30, 54%, 90%);
+  --stone-150: hsl(30, 18%, 87%);
+  --stone-600: hsl(30, 10%, 34%);
+  --stone-900: hsl(24, 5%, 18%);
+  --brown-800: hsl(14, 45%, 36%);
+  --rose-800: hsl(332, 51%, 32%);
+  --rose-50: hsl(330, 100%, 98%);
+}
+
+/* Fonts */
+@font-face {
+  font-family: "Young Serif";
+  src: url("./assets/fonts/young-serif/YoungSerif-Regular.ttf") format("truetype");
+  font-weight: 400;
+}
+
+@font-face {
+  font-family: "Outfit";
+  src: url("./assets/fonts/outfit/Outfit-VariableFont_wght.ttf") format("truetype");
+  font-weight: 400 700; /* variable font range */
+}
+
+/* Global styles */
+html {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Outfit", sans-serif;
+  font-weight: 400;
+  font-size: 1em;
+  color: var(--stone-600);
+  background-color: var(--stone-100);
+  margin: 0;
+  line-height: 2;    
+}
+
+h1, h2, h3 {
+  font-family: "Young Serif", serif;
+  font-weight: 400;
+  margin-bottom: 0px;
+}
+
+h1 { color: var(--stone-900); }
+h2 { color: var(--brown-800); font-size: 1.2em; }
+
+/* Layout */
+main {
+  display: flex;
+  justify-content: center;
+}
+
+article {
+  width: clamp(320px, 80vw, 400px);
+  max-width: 100vw;
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+  border-radius: 25px;
+  background-color: var(--white);
+}
+
+img {
+  max-width: 100%;
+  border-radius: 25px;
+}
+
+/* Prep time section */
+.prep-time {
+  background-color: var(--rose-50);
+  padding: 0 20px;
+  font-size: 0.7em;
+}
+
+.prep-time h3 {
+  font-family: "Outfit", sans-serif;
+  font-weight: 600;
+  color: var(--rose-800);
+  margin-bottom: 0;
+}
+
+ul {
+  margin-top: 5px;
+  padding-left: 40px; /* increase indent */
+}
+
+li {
+  margin-left: -25px; /* bullet to left */
+  text-indent: 20px;  /* keep text aligned */
+}
+
+.prep-time li span {
+  font-weight: 600;
+}
+
+.ingredients ul {
+    font-size: 0.7em; 
+}
+
+.instructions ol {
+  font-size: 0.7em;
+  margin-top: 5px;
+  padding-left: 50px;          /* space for text */
+  padding-right: 20px;
+  list-style-position: outside; /* numbers outside text block */
+}
+
+.instructions ol li {
+  margin-left: -30px;  /* pushes the number further left */
+  padding-left: 20px;
+  text-indent: 0;      /* ensures wrapped lines align with text */
+}
+
+.instructions span {
+    font-weight: 700;
+}
+
+.instructions ol li::marker {
+  color: var(--brown-800); /* number color */
+  font-weight: 700;
+}
+
+p {
+  font-size: 0.7em;
+}
+
+table {
+  width: 90%;            /* table fills the container */
+  border-collapse: collapse; /* optional, removes spacing between cells */
+  table-layout: fixed;     /* columns are evenly distributed */
+  font-size: 0.7em;
+  margin: 0 5%;
+}
+
+table td {
+  text-align: left;       /* optional, align text */
+  padding: 4px;           /* add some spacing */
+}
+
+table tr:not(:first-child) {
+    border-top: 1px var(--stone-150) solid;
+}
+
+table tr td:nth-child(2) {
+    font-weight: 700;
+    color: var(--brown-800);
+}
+
+
+
+/* Responsive for small screens */
+@media (max-width: 400px) {
+  article {
+    width: 100vw;
+    min-width: 280px;
+    height: 100vh;
+    border-radius: 0;
+  }
+}
